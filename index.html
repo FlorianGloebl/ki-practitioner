@@ -66,12 +66,13 @@
     .eyebrow{display:inline-block;color:var(--red);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem}
     .sec-title{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:.75rem}
     .sec-sub{color:var(--g600);font-size:1.05rem;max-width:580px;margin-bottom:3rem}
+    .sec-model .sec-sub{max-width:none}
 
     /* STAIRCASE */
     .sec-model{background:var(--g100)}
     .staircase{display:flex;align-items:flex-end;gap:0;margin-top:3rem;margin-bottom:0}
-    .step{flex:1;background:white;padding:2rem 1.75rem;box-shadow:var(--sh);border-top:4px solid var(--red);position:relative;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;overflow:hidden}
-    .step::after{content:attr(data-n);position:absolute;bottom:-.5rem;right:.5rem;font-size:8rem;font-weight:900;color:var(--red);opacity:.055;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em}
+    .step{flex:1;background:white;padding:2rem 1.75rem;box-shadow:var(--sh);border-top:4px solid var(--red);position:relative;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;isolation:isolate}
+    .step-watermark{position:absolute;top:.6rem;right:.75rem;font-size:5.5rem;font-weight:900;color:var(--red);opacity:.07;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.03em;z-index:-1}
     .step:first-child{border-radius:var(--r) 0 0 0}
     .step:nth-child(2){border-left:1px solid var(--g200);border-right:1px solid var(--g200)}
     .step:last-child{border-radius:0 var(--r) 0 0}
@@ -80,8 +81,8 @@
     .step:nth-child(2) .step-spacer{height:80px}
     .step:last-child .step-spacer{height:160px}
     .step:hover{box-shadow:var(--sh-lg);transform:translateY(-3px)}
-    .step-num{position:absolute;top:-14px;left:1.75rem;background:var(--red);color:white;padding:.25rem .9rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;white-space:nowrap}
-    .step-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;margin-top:.5rem}
+    .step-num{position:absolute;top:.9rem;left:1.75rem;background:var(--red);color:white;padding:.25rem .9rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;white-space:nowrap}
+    .step-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;margin-top:2.25rem}
     .step h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
     .step p{color:var(--g600);font-size:.875rem;margin-bottom:1rem;flex:1}
     .tool-btns{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
@@ -92,7 +93,7 @@
     .stair-bottom strong{color:var(--g800)}
 
     /* WORKSHOPS */
-    #ws-1,#ws-2,#ws-3{scroll-margin-top:100px}
+    #workshops{scroll-margin-top:90px}
     .sec-workshops{background:var(--dark);color:white}
     .sec-workshops .sec-sub{color:rgba(255,255,255,.55)}
     .ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
@@ -285,7 +286,8 @@
     <h2 class="sec-title">Das KIM-Reifegradmodell</h2>
     <p class="sec-sub">Drei Stufen zur KI-Souveränität. Strukturiert, aufeinander aufbauend und direkt im Mittelstand einsetzbar.</p>
     <div class="staircase">
-      <div class="step" data-n="1">
+      <div class="step">
+        <span class="step-watermark" aria-hidden="true">1</span>
         <div class="step-spacer"></div>
         <div class="step-num">Stufe 1</div>
         <div class="step-label">Stufe 1</div>
@@ -297,9 +299,10 @@
           <span class="tool-btn">Gemini</span>
           <span class="tool-btn">Microsoft Copilot</span>
         </div>
-        <a class="step-link" href="#ws-1">Zum Workshop 07.09. →</a>
+        <a class="step-link" href="#workshops">Zum Workshop 07.09. →</a>
       </div>
-      <div class="step" data-n="2">
+      <div class="step">
+        <span class="step-watermark" aria-hidden="true">2</span>
         <div class="step-spacer"></div>
         <div class="step-num">Stufe 2</div>
         <div class="step-label">Stufe 2</div>
@@ -311,9 +314,10 @@
           <span class="tool-btn">Make</span>
           <span class="tool-btn">Zapier</span>
         </div>
-        <a class="step-link" href="#ws-2">Zum Workshop 14.09. →</a>
+        <a class="step-link" href="#workshops">Zum Workshop 14.09. →</a>
       </div>
-      <div class="step" data-n="3">
+      <div class="step">
+        <span class="step-watermark" aria-hidden="true">3</span>
         <div class="step-spacer"></div>
         <div class="step-num">Stufe 3</div>
         <div class="step-label">Stufe 3</div>
@@ -324,7 +328,7 @@
           <span class="tool-btn">Custom Agents</span>
           <span class="tool-btn">Multi-Agent</span>
         </div>
-        <a class="step-link" href="#ws-3">Zum Workshop 21.09. →</a>
+        <a class="step-link" href="#workshops">Zum Workshop 21.09. →</a>
       </div>
     </div>
     <div class="stair-bottom">
@@ -592,8 +596,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logos">
-        <img src="logo.png" alt="Glöbl & Partner" class="footer-logo-gp" style="filter:none">
-        <img src="edw-logo.svg" alt="Ehrlich. Direkt. Wirksam." class="footer-logo-edw">
+        <img src="logo-dark.png" alt="Glöbl & Partner" class="footer-logo-gp">
       </div>
       <p>KI-Beratung und Weiterbildung für den Mittelstand.</p>
       <div class="footer-addr">
