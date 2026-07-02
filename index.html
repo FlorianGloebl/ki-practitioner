@@ -55,7 +55,7 @@
     .btn-primary:hover{background:var(--red-h);transform:translateY(-1px)}
     .btn-outline{background:transparent;color:white;padding:.9rem 2rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.22);transition:border-color .2s,background .2s}
     .btn-outline:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
-    .hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.1)}
+    .hero-stats{display:flex;gap:3rem 7rem;justify-content:center;flex-wrap:wrap;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.1)}
     .stat{text-align:center}
     .stat-val{display:block;font-size:clamp(2.5rem,5vw,4.75rem);font-weight:900;color:var(--red);line-height:1}
     .stat-lbl{font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.4rem}
@@ -70,7 +70,8 @@
     /* STAIRCASE */
     .sec-model{background:var(--g100)}
     .staircase{display:flex;align-items:flex-end;gap:0;margin-top:3rem;margin-bottom:0}
-    .step{flex:1;background:white;padding:2rem 1.75rem;box-shadow:var(--sh);border-top:4px solid var(--red);position:relative;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
+    .step{flex:1;background:white;padding:2rem 1.75rem;box-shadow:var(--sh);border-top:4px solid var(--red);position:relative;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;overflow:hidden}
+    .step::after{content:attr(data-n);position:absolute;bottom:-.5rem;right:.5rem;font-size:8rem;font-weight:900;color:var(--red);opacity:.055;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em}
     .step:first-child{border-radius:var(--r) 0 0 0}
     .step:nth-child(2){border-left:1px solid var(--g200);border-right:1px solid var(--g200)}
     .step:last-child{border-radius:0 var(--r) 0 0}
@@ -79,7 +80,7 @@
     .step:nth-child(2) .step-spacer{height:80px}
     .step:last-child .step-spacer{height:160px}
     .step:hover{box-shadow:var(--sh-lg);transform:translateY(-3px)}
-    .step-num{position:absolute;top:-18px;left:1.75rem;background:var(--red);color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;letter-spacing:.05em}
+    .step-num{position:absolute;top:-14px;left:1.75rem;background:var(--red);color:white;padding:.25rem .9rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;white-space:nowrap}
     .step-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;margin-top:.5rem}
     .step h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
     .step p{color:var(--g600);font-size:.875rem;margin-bottom:1rem;flex:1}
@@ -100,6 +101,7 @@
     .ws-top{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
     .ws-stage{background:var(--red);color:white;padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
     .ws-free{background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:700}
+    .ws-spots{background:rgba(183,12,52,.25);color:#ff8fa3;border:1px solid rgba(183,12,52,.4);padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:700}
     .ws-date-line{font-size:1rem;font-weight:700;color:white;margin-bottom:.25rem}
     .ws-meta{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:1rem}
     .ws-card h3{font-size:1.1rem;font-weight:700;color:white;margin-bottom:.875rem}
@@ -184,9 +186,9 @@
     /* FOOTER */
     footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     .footer-inner{max-width:1200px;margin:0 auto;display:flex;gap:4rem;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
-    .footer-logos{display:flex;flex-direction:column;gap:1rem;margin-bottom:.5rem}
-    .footer-logo-gp{height:48px;width:auto}
-    .footer-logo-edw{height:32px;width:auto;filter:brightness(0) invert(1);opacity:.55}
+    .footer-logos{display:flex;flex-direction:row;align-items:center;gap:1.5rem;margin-bottom:.5rem}
+    .footer-logo-gp{height:44px;width:auto}
+    .footer-logo-edw{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.55}
     .footer-brand p{font-size:.875rem;max-width:260px;margin-top:.4rem}
     .footer-addr{font-size:.8rem;margin-top:.75rem;line-height:1.7}
     .footer-col h4{color:white;font-size:.875rem;margin-bottom:1rem}
@@ -203,8 +205,8 @@
     .footer-reifegrad{background:var(--red);border-radius:var(--r);padding:1.5rem;margin-top:1rem}
     .footer-reifegrad h4{color:white!important;font-size:1rem;font-weight:800;margin-bottom:.5rem}
     .footer-reifegrad p{font-size:.8rem;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:1rem}
-    .btn-reifegrad{display:inline-block;background:white;color:var(--red);padding:.6rem 1.1rem;border-radius:6px;font-weight:800;font-size:.82rem;text-decoration:none;transition:background .2s,transform .15s}
-    .btn-reifegrad:hover{background:var(--g200);transform:translateY(-1px)}
+    .btn-reifegrad{display:inline-block;background:white;color:var(--red)!important;padding:.6rem 1.1rem;border-radius:6px;font-weight:800;font-size:.82rem;text-decoration:none;transition:background .2s,transform .15s}
+    .btn-reifegrad:hover{background:var(--g200)!important;transform:translateY(-1px)}
 
     /* RESPONSIVE */
     @media(max-width:960px){
@@ -249,7 +251,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">Nur 10 kostenlose Plätze verfügbar</div>
+  <div class="hero-badge">10 freie Plätze je Termin</div>
   <h1>KI <span class="accent">verstehen.</span> KI <span class="accent">nutzen.</span> Mit KI <span class="accent">automatisieren.</span></h1>
   <p class="hero-sub">KI-Practitioner für den Mittelstand. Vom ersten Prompt zum KI-Agenten. Kostenlos. Praxisnah. In 3 Terminen.</p>
   <div class="hero-actions">
@@ -259,7 +261,7 @@
   <div class="hero-stats">
     <div class="stat">
       <span class="stat-val">10</span>
-      <span class="stat-lbl">Kostenlose Plätze</span>
+      <span class="stat-lbl">Freie Plätze je Termin</span>
     </div>
     <div class="stat">
       <span class="stat-val">3</span>
@@ -283,9 +285,9 @@
     <h2 class="sec-title">Das KIM-Reifegradmodell</h2>
     <p class="sec-sub">Drei Stufen zur KI-Souveränität. Strukturiert, aufeinander aufbauend und direkt im Mittelstand einsetzbar.</p>
     <div class="staircase">
-      <div class="step">
+      <div class="step" data-n="1">
         <div class="step-spacer"></div>
-        <div class="step-num">S1</div>
+        <div class="step-num">Stufe 1</div>
         <div class="step-label">Stufe 1</div>
         <h3>Chat &amp; Assistent</h3>
         <p>KI im Arbeitsalltag nutzen. Vom ersten Prompt zu produktiven Workflows.</p>
@@ -297,9 +299,9 @@
         </div>
         <a class="step-link" href="#ws-1">Zum Workshop 07.09. →</a>
       </div>
-      <div class="step">
+      <div class="step" data-n="2">
         <div class="step-spacer"></div>
-        <div class="step-num">S2</div>
+        <div class="step-num">Stufe 2</div>
         <div class="step-label">Stufe 2</div>
         <h3>Automation &amp; Workflow</h3>
         <p>Prozesse automatisieren. KI-gestützte Workflows bauen, die Ihnen Arbeit abnehmen.</p>
@@ -311,9 +313,9 @@
         </div>
         <a class="step-link" href="#ws-2">Zum Workshop 14.09. →</a>
       </div>
-      <div class="step">
+      <div class="step" data-n="3">
         <div class="step-spacer"></div>
-        <div class="step-num">S3</div>
+        <div class="step-num">Stufe 3</div>
         <div class="step-label">Stufe 3</div>
         <h3>Agent &amp; Multi-Agent-Systeme</h3>
         <p>KI eigenständig arbeiten lassen. End-to-End-Automatisierung mit Agentic AI.</p>
@@ -342,6 +344,7 @@
         <div class="ws-top">
           <span class="ws-stage">Stufe 1</span>
           <span class="ws-free">Kostenlos</span>
+          <span class="ws-spots">10 Plätze</span>
         </div>
         <div class="ws-date-line">Mo 07. September 2026</div>
         <div class="ws-meta">9:00 – 13:00 Uhr · ca. 4 Stunden · Online</div>
@@ -362,6 +365,7 @@
         <div class="ws-top">
           <span class="ws-stage">Stufe 2</span>
           <span class="ws-free">Lunch &amp; Learn</span>
+          <span class="ws-spots">10 Plätze</span>
         </div>
         <div class="ws-date-line">Mo 14. September 2026</div>
         <div class="ws-meta">12:00 – 13:30 Uhr · ca. 90 Minuten · Online</div>
@@ -381,6 +385,7 @@
         <div class="ws-top">
           <span class="ws-stage">Stufe 3</span>
           <span class="ws-free">Lunch &amp; Learn</span>
+          <span class="ws-spots">10 Plätze</span>
         </div>
         <div class="ws-date-line">Mo 21. September 2026</div>
         <div class="ws-meta">12:00 – 13:30 Uhr · ca. 90 Minuten · Online</div>
@@ -413,7 +418,7 @@
     <div class="proof-grid">
       <div class="proof-item">
         <span class="proof-val">10</span>
-        <div class="proof-lbl">Kostenlose Plätze. Limitiert und persönlich betreut.</div>
+        <div class="proof-lbl">Freie Plätze je Termin. Limitiert und persönlich betreut.</div>
       </div>
       <div class="proof-item">
         <span class="proof-val">3</span>
@@ -503,7 +508,7 @@
   <div class="inner">
     <div class="form-wrap">
       <div class="form-header">
-        <div class="form-spots">🎯 Noch 10 Plätze verfügbar</div>
+        <div class="form-spots">🎯 10 freie Plätze je Termin</div>
         <h2 class="sec-title">Jetzt auf einen Platz bewerben</h2>
         <p class="sec-sub" style="margin:.5rem auto 0">Der KI-Practitioner ist kostenlos. Da die Plätze begrenzt sind, vergeben wir die 10 Plätze nach kurzer Prüfung der Bewerbung.</p>
       </div>
