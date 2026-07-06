@@ -103,6 +103,8 @@
     .ws-stage{background:var(--red);color:white;padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
     .ws-free{background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:700}
     .ws-spots{background:rgba(183,12,52,.25);color:#ff8fa3;border:1px solid rgba(183,12,52,.4);padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:700}
+    .ws-closed{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:700}
+    .ws-open{background:rgba(46,160,67,.2);color:#7ee08a;border:1px solid rgba(46,160,67,.4);padding:.25rem .7rem;border-radius:5px;font-size:.72rem;font-weight:700}
     .ws-date-line{font-size:1rem;font-weight:700;color:white;margin-bottom:.25rem}
     .ws-meta{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:1rem}
     .ws-card h3{font-size:1.1rem;font-weight:700;color:white;margin-bottom:.875rem}
@@ -349,9 +351,10 @@
           <span class="ws-stage">Stufe 1</span>
           <span class="ws-free">Kostenlos</span>
           <span class="ws-spots">10 Plätze</span>
+          <span class="ws-closed">Geschlossen · nur mit Bewerbung</span>
         </div>
         <div class="ws-date-line">Mo 07. September 2026</div>
-        <div class="ws-meta">9:00 – 13:00 Uhr · ca. 4 Stunden · Online</div>
+        <div class="ws-meta">9:00 – 12:00 Uhr · ca. 3 Stunden · Online</div>
         <h3>KI-Practitioner: ChatGPT &amp; Copilot</h3>
         <ul class="ws-topics">
           <li>Wie Sprachmodelle wirklich funktionieren</li>
@@ -370,6 +373,7 @@
           <span class="ws-stage">Stufe 2</span>
           <span class="ws-free">Kostenlos</span>
           <span class="ws-spots">10 Plätze</span>
+          <span class="ws-closed">Geschlossen · nur mit Bewerbung</span>
         </div>
         <div class="ws-date-line">Mo 14. September 2026</div>
         <div class="ws-meta">12:00 – 13:30 Uhr · ca. 90 Minuten · Online</div>
@@ -389,10 +393,11 @@
         <div class="ws-top">
           <span class="ws-stage">Stufe 3</span>
           <span class="ws-free">Kostenlos</span>
-          <span class="ws-spots">10 Plätze</span>
+          <span class="ws-spots">20 Plätze</span>
+          <span class="ws-open">Offen für alle</span>
         </div>
         <div class="ws-date-line">Mo 21. September 2026</div>
-        <div class="ws-meta">12:00 – 13:30 Uhr · ca. 90 Minuten · Online</div>
+        <div class="ws-meta">12:00 – 13:30 Uhr · ca. 90 Minuten · Online · Keine Bewerbung nötig</div>
         <h3>KI Lunch &amp; Learn: Agentic AI &amp; Claude Code</h3>
         <ul class="ws-topics">
           <li>Überblick zu Agentic AI</li>
@@ -408,7 +413,7 @@
     </div>
     <div class="ws-cta">
       <a href="#bewerben" class="btn-primary">Jetzt auf einen Platz bewerben</a>
-      <p class="ws-cta-note">Kostenlos. Limitiert auf 10 Plätze. Sie erhalten nach ca. 5–7 Werktagen eine Information, ob Sie in die Workshop-Reihe aufgenommen wurden.</p>
+      <p class="ws-cta-note">Kostenlos. Stufe 1 &amp; 2 sind limitiert auf 10 Plätze – Sie erhalten nach ca. 5–7 Werktagen eine Information, ob Sie aufgenommen wurden. Stufe 3 ist offen für alle, ohne Bewerbung.</p>
     </div>
   </div>
 </section>
@@ -464,7 +469,7 @@
           Unternehmen, die bessere Wertschöpfung wollen, brauchen das mächtigste Werkzeug, das es je gab. <strong>Wer KI nicht nutzt, wird früher oder später von denen überholt, die es tun.</strong>
         </p>
         <div class="kim-actions" style="margin-top:2rem">
-          <a href="https://workshops.v-und-s.de" target="_blank" class="btn-outline-white">KIM kennenlernen →</a>
+          <a href="https://kim.v-und-s.de" target="_blank" class="btn-outline-white">KIM kennenlernen →</a>
         </div>
       </div>
       <div class="kim-pillar">
@@ -514,7 +519,7 @@
       <div class="form-header">
         <div class="form-spots">🎯 10 freie Plätze je Termin</div>
         <h2 class="sec-title">Jetzt auf einen Platz bewerben</h2>
-        <p class="sec-sub" style="margin:.5rem auto 0">Der KI-Practitioner ist kostenlos. Da die Plätze begrenzt sind, vergeben wir die 10 Plätze nach kurzer Prüfung der Bewerbung.</p>
+        <p class="sec-sub" style="margin:.5rem auto 0">Der KI-Practitioner ist kostenlos. Für die Termine am 07.09. und 14.09. sind die Plätze begrenzt, wir vergeben sie nach kurzer Prüfung der Bewerbung. Der Termin am 21.09. (Agentic AI) ist offen für alle – ohne Bewerbung.</p>
       </div>
       <div class="form-note">
         ℹ️ <strong>Die Teilnahme ist kostenlos.</strong> Sie erhalten nach ca. 5–7 Werktagen eine Information, ob Sie in die Workshop-Reihe aufgenommen wurden.
@@ -554,24 +559,24 @@
             <span class="termine-legend">Für welche Termine möchten Sie sich bewerben? *</span>
             <div class="termine-options">
               <label class="termin-check">
-                <input type="checkbox" name="termine" value="07.09.2026 – KI-Practitioner (ca. 4 Stunden)">
+                <input type="checkbox" name="termine" value="07.09.2026 – KI-Practitioner (ca. 3 Stunden)">
                 <div class="termin-info">
-                  <div class="termin-date">Mo 07.09.2026 · 9:00 – 13:00 Uhr</div>
-                  <div class="termin-desc">KI-Practitioner: ChatGPT &amp; Copilot · ca. 4 Stunden</div>
+                  <div class="termin-date">Mo 07.09.2026 · 9:00 – 12:00 Uhr</div>
+                  <div class="termin-desc">KI-Practitioner: ChatGPT &amp; Copilot · ca. 3 Stunden · Geschlossen, nur mit Bewerbung</div>
                 </div>
               </label>
               <label class="termin-check">
                 <input type="checkbox" name="termine" value="14.09.2026 – Lunch & Learn: Automatisierung (90 Min.)">
                 <div class="termin-info">
                   <div class="termin-date">Mo 14.09.2026 · 12:00 – 13:30 Uhr</div>
-                  <div class="termin-desc">Lunch &amp; Learn: Automatisierung mit n8n · 90 Minuten</div>
+                  <div class="termin-desc">Lunch &amp; Learn: Automatisierung mit n8n · 90 Minuten · Geschlossen, nur mit Bewerbung</div>
                 </div>
               </label>
               <label class="termin-check">
-                <input type="checkbox" name="termine" value="21.09.2026 – Lunch & Learn: Agentic AI (90 Min.)">
+                <input type="checkbox" name="termine" value="21.09.2026 – Lunch & Learn: Agentic AI (90 Min., offene Anmeldung)">
                 <div class="termin-info">
                   <div class="termin-date">Mo 21.09.2026 · 12:00 – 13:30 Uhr</div>
-                  <div class="termin-desc">Lunch &amp; Learn: Agentic AI &amp; Claude Code · 90 Minuten</div>
+                  <div class="termin-desc">Lunch &amp; Learn: Agentic AI &amp; Claude Code · 90 Minuten · Offen für alle, keine Bewerbung nötig</div>
                 </div>
               </label>
             </div>
